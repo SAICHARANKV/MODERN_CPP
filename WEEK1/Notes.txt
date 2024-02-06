@@ -1,0 +1,28 @@
+1) defaulted & deleted member functions
+    : You can explicitly specify what is enabled vs disabled
+
+2) Constructor delegation
+    : Transfer control from one constructor another of the same class to 
+    use "chaining of constructors" to fully construct an object. It can 
+    avoid duplicated initialization code.
+
+3) Explicit Keyword
+    : prevents a constructor with only 1 "Unknown/NON-default" parameter
+    to be used for implicit type conversion.
+
+4) Introduction  to smart pointers
+    : scope based resource management for handling pointer deallocation
+    "smartly"
+
+5) using Keyword
+    : creates an  alternate name/alias for some type
+
+6) auto Keyword
+    : allows for inferring or deducing type of a variable based on initial
+    value.
+
+7) Uniform initialization
+    : one common syntactical way of initializing everything
+
+8) nullptr
+    : replacement of NULL macro with a proper type (std::nullptr)

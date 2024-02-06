@@ -1,0 +1,20 @@
+FIRST CLASS FUNCTIONS:
+
+1) Every function has a type(its signature)
+
+2) Function can be passed as a parameter to other functions
+
+3) Functions can be returned from other functions
+
+4) Functions address can be captured in a variable
+
+5) Functions can be stored in containers.
+
+Functions should not be written as global as it makes code complicated
+to solve this issue using lambda.
+
+lambda functions are anynomous functions
+They are like objects
+They allow to control scope and life.
+
+lambda function automatically in internal with a class member function

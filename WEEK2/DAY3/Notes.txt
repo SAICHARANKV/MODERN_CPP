@@ -1,0 +1,26 @@
+                    100 101 102
+objective: find average of all entries in the structure.
+
+array [100 | 101 | 102]
+    0x401        0x4aH
+
+step 1:intialize sum to 0
+step 2: go to first location of array, and it to sum
+step 3: go to second location of array(use formula), and it to sum
+step 4: go to third location of array, and it to sum
+step 5: divide sum/3 and return value.
+
+linked list
+        0x543H              0x876H              0x777H
+[nullptr|100|0x876H] [0x543H|101|0x777H] [0x876H|102|nullptr]
+
+step 1: Intialize total to 0
+step 2:find thr first node(head node).
+Fetch the middle part of node(value)and add it to total.
+step 3:Now,go to next pointer part of the node.Dereference the pointer.
+You arrive on 2nd node of the list
+step 4:Fetch the Middle part of node and add it to total.
+step 5: Now,go to next pointer part of the node.Dereference the pointer.
+You arrive on 3rd node of the list
+step 6:Fetch the Middle part of node and add it to total.
+step 7: divide total/3 and return it to user.

@@ -1,0 +1,9 @@
+API : It is a way to access a functionality of some system
+Application Programming Interface
+
+-REST API - Representational State Transfer
+
+-GET : fetch Data
+-POST: Submit and save data in the backend through the API
+-PUT : Update data in the backend through the API
+-DELETE: Remove Something from the backend

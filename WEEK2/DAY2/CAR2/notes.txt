@@ -1,0 +1,70 @@
+F1)
+1) Name: FindEngineHorsePowerByCarId
+2) Parameters: (DataContainer , string CarId)
+3) Return: Integer for Horse Power
+
+F2)
+1) Name: CreateCarObjects // Create objects for user input
+2) Parameters: An Empty Container
+3) Return: Void
+
+F3)
+1) Name: FindAbove80TorqueCars
+2) Parameters: (DataContainer)
+3) Return: A Container of Car Instances vector
+
+F4)
+1) Name: FindCarByCarType
+2) Parameters: DataContainer,CarType
+3) Return: Instances==vector
+
+F5)
+1) Name: FindAverageHorsePowerByConditions
+2) Parameters:DataContainer
+3) Return: float
+
+F6)
+1) Name: LowestCarPrice
+2) Parameters: DataContainer
+3) Return: string
+
+F7)
+1) Name: CarCombinedPrice
+2) Parameters:DataContainer Car c1 ,DataContainer Car c2
+3) Return:float
+
+F8)
+1) Name:
+2) Parameters:
+3) Return:
+
+void CreateObjects(CarPointerContainer& carData,EngineContainer& engineData)
+{
+std::string engineId{""};
+int engineType{0}                                                            ;
+int horsepower {0}                                                           ;
+int torque{0}                                                                ;
+std::string carId{""};
+std::string carBrand{""};
+//CarType carType{CarType::SEDAN}
+int carType{0}                                                               ;
+float CarPrice {0.0f}                                                        ;
+
+for(int i=0                                                                                               ;i<2;i++)
+{
+std::cin>>enginedId                                                                                       ;
+std::cin>>engineType                                                                                      ;
+std::cin>>horsepower                                                                                      ;
+std::cin>>torque                                                                                          ;
+engineData.emplace_back(engineId,static_cast<EngineType>(engineType),horsepower,torque)                   ;
+}
+auto itr= engineData.begin()                                                                              ;
+for(int i=0                                                                                               ;i<2;i++)
+{
+std::cin>>carId                                                                                           ;
+std::cin>>carBrand                                                                                        ;
+std::cin>>carType                                                                                         ;
+std::cin>>carPrice                                                                                        ;
+CarData.emplace_back(std::make_shared<Car>(carId,carBrand,static_cast<CarType>(carType),*itr++,carPrice)) ;
+}
+}

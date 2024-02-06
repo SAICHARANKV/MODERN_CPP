@@ -1,0 +1,23 @@
+CPP17 FEATURES:
+----------------
+Variant,
+Visit,
+Optional,
+if_switch_init,
+Structured Binding
+
+guranteed_copy_ellision // gurantee of not copy
+// Ellision - I am not going to do
+
+Rule of 0 : As long as possible do not implement any special member function
+like default constructor ,move constructor unneccessarly, unless u get a requirment
+to modify. Leave as they are.
+
+Rule of 3: If any way u change destructor.Then, U need to must change
+copy constructor,copy assignment
+
+Rule of 5: If u follow rule of 3 , and also want move constructor and move assignment
+define them too in own way.
+
+If "COPY constructor" with "MOVE constructor" cannot be available and vice versa.So, that is why compiler do not
+provide copy with move constructor.

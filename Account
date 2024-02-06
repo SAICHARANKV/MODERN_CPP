@@ -1,0 +1,180 @@
+.
+├── PRACTICE
+│   └── CAR
+│       ├── app
+│       ├── Car.cpp
+│       ├── Car.h
+│       ├── CarType.h
+│       ├── Engine.cpp
+│       ├── Engine.h
+│       ├── EngineType.h
+│       ├── Functionalities.cpp
+│       ├── Functionalities.h
+│       └── Main.cpp
+├── WEEK1
+│   ├── DAY1
+│   │   ├── a.out
+│   │   ├── app
+│   │   ├── Car.cpp
+│   │   ├── Car.h
+│   │   ├── CarType.h
+│   │   ├── demo.cpp
+│   │   ├── Demo.cpp
+│   │   ├── Example.cpp
+│   │   ├── Functionalities.cpp
+│   │   ├── Functionalities.h
+│   │   └── Main.cpp
+│   ├── DAY2
+│   │   ├── a.out
+│   │   ├── demo.cpp
+│   │   ├── moderncpp_rvalues.cpp
+│   │   ├── passing_parameters_by_address.cpp
+│   │   ├── passing_parameters_by_lvalue_reference.cpp
+│   │   └── passing_parameters.cpp
+│   ├── DAY3
+│   │   ├── CompositionDemo
+│   │   │   ├── AccountType.h
+│   │   │   ├── a.out
+│   │   │   ├── app
+│   │   │   ├── BankAccount.cpp
+│   │   │   ├── BankAccount.h
+│   │   │   ├── DebitCard.cpp
+│   │   │   ├── DebitCard.h
+│   │   │   ├── DebitCardType.h
+│   │   │   ├── Functionalities.cpp
+│   │   │   ├── Functionalities.h
+│   │   │   └── Main.cpp
+│   │   ├── Demo
+│   │   └── Demo.cpp
+│   ├── DAY4
+│   │   ├── app
+│   │   ├── Example2
+│   │   │   ├── app
+│   │   │   ├── Bike.cpp
+│   │   │   ├── Bike.h
+│   │   │   ├── BikeType.h
+│   │   │   ├── Car.cpp
+│   │   │   ├── Car.h
+│   │   │   ├── CarType.h
+│   │   │   ├── Functionalities.cpp
+│   │   │   ├── Functionalities.h
+│   │   │   ├── Main.cpp
+│   │   │   ├── Vehicle.cpp
+│   │   │   ├── Vehicle.h
+│   │   │   └── VehicleType.h
+│   │   ├── Example.cpp
+│   │   └── Sample.txt
+│   └── Notes.txt
+├── WEEK2
+│   ├── DAY1
+│   │   ├── a.out
+│   │   ├── app
+│   │   ├── build
+│   │   │   └── Debug
+│   │   │       ├── lambda_example2.o
+│   │   │       └── outDebug
+│   │   ├── Example.cpp
+│   │   ├── lambda_example2.cpp
+│   │   ├── Notes.txt
+│   │   └── Practice.cpp
+│   ├── DAY2
+│   │   ├── a.out
+│   │   ├── app
+│   │   ├── CAR2
+│   │   │   ├── app
+│   │   │   ├── build
+│   │   │   │   └── Debug
+│   │   │   │       ├── Functionalities.o
+│   │   │   │       └── Main.o
+│   │   │   ├── Car.cpp
+│   │   │   ├── Car.h
+│   │   │   ├── CarType.h
+│   │   │   ├── EmptyContainerException.h
+│   │   │   ├── Engine.cpp
+│   │   │   ├── Engine.h
+│   │   │   ├── EngineType.h
+│   │   │   ├── Functionalities.cpp
+│   │   │   ├── Functionalities.h
+│   │   │   ├── IdNotFoundException.h
+│   │   │   ├── Input.txt
+│   │   │   ├── Main.cpp
+│   │   │   ├── NoMatchingInstanceException.h
+│   │   │   └── notes.txt
+│   │   ├── Example2.cpp
+│   │   └── Example.cpp
+│   ├── DAY3
+│   │   ├── Example1.cpp
+│   │   ├── Example2.cpp
+│   │   ├── Notes.txt
+│   │   └── Sample
+│   │       ├── app
+│   │       ├── Example.cpp
+│   │       ├── Main.cpp
+│   │       ├── Notes.txt
+│   │       ├── Request.cpp
+│   │       ├── Request.hpp
+│   │       ├── Response.cpp
+│   │       └── Response.hpp
+│   ├── DAY4
+│   │   ├── app
+│   │   ├── Const_keyword.cpp
+│   │   ├── Employee.cpp
+│   │   ├── Main.cpp
+│   │   ├── ref_func_demo.cpp
+│   │   ├── std::bindDemo.cpp
+│   │   └── VIRTUAL_CAST_DESTRUCT_EXAMPLE
+│   │       ├── app
+│   │       ├── Developer.cpp
+│   │       ├── DeveloperDepartmentType.hpp
+│   │       ├── Developer.hpp
+│   │       ├── Employee.cpp
+│   │       ├── Employee.hpp
+│   │       ├── Functionalities.cpp
+│   │       ├── Functionalities.hpp
+│   │       ├── HR.cpp
+│   │       ├── HR.hpp
+│   │       ├── HrSpecializationType.hpp
+│   │       ├── Main.cpp
+│   │       └── Notes.cpp
+│   └── Notes.txt
+└── WEEK3
+    ├── DAY1
+    │   ├── CAR2
+    │   │   ├── app
+    │   │   ├── build
+    │   │   ├── Car.cpp
+    │   │   ├── Car.h
+    │   │   ├── CarType.h
+    │   │   ├── EmptyContainerException.h
+    │   │   ├── Engine.cpp
+    │   │   ├── Engine.h
+    │   │   ├── EngineType.h
+    │   │   ├── Functionalities.cpp
+    │   │   ├── Functionalities.h
+    │   │   ├── IdNotFoundException.h
+    │   │   ├── Input.txt
+    │   │   ├── Main.cpp
+    │   │   ├── NoMatchingInstanceException.h
+    │   │   └── notes.txt
+    │   ├── THREAD_SAMPLES
+    │   │   ├── Thread_demo_1.cpp
+    │   │   ├── Thread_demo_2.cpp
+    │   │   ├── Thread_demo_3.cpp
+    │   │   ├── Thread_demo_4.cpp
+    │   │   └── Thread_demo_5.cpp
+    │   └── VARIANT_EXAMPLES
+    │       ├── a.out
+    │       ├── app
+    │       ├── Variant_example_1.cpp
+    │       ├── Variant_example_2.cpp
+    │       └── Variant_example_3.cpp
+    └── DAY2
+        ├── app
+        ├── Copy_ellision.cpp
+        ├── Copy_ellision_demo2.cpp
+        ├── If_switch_init.cpp
+        ├── Notes.txt
+        ├── Rule_trio.cpp
+        └── Structure_binding_demo.cpp
+
+28 directories, 149 files

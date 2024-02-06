@@ -1,0 +1,24 @@
+class x and class y are connected to each other with a solid line between them without
+a what does this indicate?
+
+option 1 : class x is a child class of class y.
+
+option 2 : class x is composed by class y or vice versa
+
+option 3 : class x is abstract base class
+
+option 4 : class x is associated with class y bidirectionally. (correct) |/
+
+1. A SOLID LINE WITH AN UNFILLED TRAINGULAR HEAD represents inheritance
+
+A ---|> B (B is parent and and A is class)
+
+2. When Name of the class is written in italics then it is abstract class.
+
+3. When Name of the function is written in italics then it is abstract function.
+
+4. Interfaces Written with a dotted line among classes and <<interface>> name in a class heading.
+
+5. Aggregation :- Unfilled Diamond with an arrow. (arrow end ---composed by)
+
+6. Composition :- Filled Diamond with and arrow.

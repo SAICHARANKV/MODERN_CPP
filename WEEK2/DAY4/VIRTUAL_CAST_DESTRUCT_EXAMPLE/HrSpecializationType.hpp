@@ -1,0 +1,11 @@
+#ifndef HRSPECIALIZATIONTYPE_HPP
+#define HRSPECIALIZATIONTYPE_HPP
+
+enum class HrSpecializationType
+{
+    RECURITMENT,
+    PMT,
+    TAG
+};
+
+#endif // HRSPECIALIZATIONTYPE_HPP

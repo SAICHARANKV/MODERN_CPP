@@ -1,0 +1,92 @@
+#include <iostream>
+#include <array>
+#include <functional>
+
+using FnType = std::function<int(int)>; // Container of functionspointers
+using FnContainer = std::array<FnType, 2>;
+
+// functions didnot go FnContainer just address of f1 and f2 is given
+void Operation(const std::array<int, 5> &data, FnContainer &fns) // std::function<int(int)> fn)
+{
+    for (auto &fn : fns) // for 2 different lambdas to run
+    {
+        for (int val : data) // for data in array
+        {
+            std::cout << fn(val) << "\t";
+        }
+        std::cout << "\n";
+    }
+    // for (int val : data) // for single function  data
+    // {
+    //     std::cout << fn(val) << "\t";
+    // }
+}
+
+int main()
+{
+    int n1 = 100;
+    auto f1 = [n1](int number) mutable // to change n1 in lambda
+    {
+        n1 = 99;
+        return number * number;
+    };
+
+    auto f2 = [](int number)
+    {
+        return number * number * number;
+    };
+
+    FnContainer data = {f1, f2}; // sending lamdas into containers
+    // L value passed by reference
+    Operation(std::array<int, 5>{1, 2, 3, 4, 5}, data);
+    // R value direct assigment,L value by reference
+    // std::array<int, 5>
+    //     v = {1, 2, 3, 4, 5};
+    // Operation(v,
+    //           [](int number)
+    //           {
+    //               return number * number;
+    //           });
+    // std::cout << std::endl;
+}
+
+/*
+Below code has code repetation and redudancy
+*/
+// void Operation(std::array<int, 5> &data, enum class Logic op)
+// {
+//     if (op == Logic::SQUARE)
+//     {
+//         for (int val : data)
+//         {
+//             std::cout << val * val << "\n";
+//         }
+//     }
+//     else if (op == Logic::CUBE)
+//     {
+//         for (int val : data)
+//         {
+//             std::cout << val * val * val << "\n";
+//         }
+//     }
+
+//     else
+//     {
+//         //......
+//     }
+// }
+
+/*
+In Capture clause
+int n1 =100;
+auto f1 = [n1](int number)
+    {
+        n1=99; // error immutable
+        return number * number;
+    };
+
+[&] means all variables in enclosing function are captured by reference
+[=] means all variables in enclosing function are captured by value
+[&n1] means only n1 variable in enclosing function is captured by reference
+[n1] means only n1 variable in enclosing function is captured by value
+*/

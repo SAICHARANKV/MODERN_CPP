@@ -1,0 +1,6 @@
+WEEK 2:
+
+1) Lambda
+2) Function_wrapper
+3) Reference_wrapper
+4) std::ref, std::bind,std::function
