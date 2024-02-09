@@ -1,0 +1,56 @@
+Data is all Binary Values
+Arrangement of Data : Data Structures
+Data Structures are an illusion!! (they are not present in
+a particular way we assume their working principle in memory)
+
+-------------------------------------------------------------
+HASHING : It is a technique in which a key is stored precisely
+at a location determined by running a function (hash Function).
+The position itself is the output of the hash function
+(mathematical function)applied on the key.This output value is
+also called the hash value or hash.
+
+eg:- 10 21 33
+[10|Sunny|Pune],[21|KC|Mumbai],[ 33 | Kaveri | Delhi]
+
+HASH TABLE :mod 3 
+
+0  { 21, [ 21 | KC | Mumbai ] }---->{ 33, [ 33 | Kaveri | Delhi]}--->nullptr
+
+1  { 10, [ 10 | Sunny | Pune ] } ---> nullptr
+
+2  nullptr
+
+-------------------------------------------------------------
+step 1: Decide a mathematical formula which will be used to
+determine positiom of each number 10,21,33 in a illusion called
+"HASH TABLE".
+
+step 2: Apply the mathematical formula on each key to obtain hash value.
+
+a) 10%3=1 so map id 10 person to 1.
+b) 21%3=0 so map id 21 person to 0.
+c) 33%3=0 so map id 33 person to 0.
+
+/*
+Array: std::array<Employee,3>data ;
+
+
+            0x100              0x167    0x168             0x235     0x236
+          [  [ 10 | Sunny | Pune]        [ 21 | KC | Mumbai]         [ 33 | Kaveri | Delhi] ]
+
+
+Vector: std::array<Employee>data ;
+
+
+            0x100              0x167    0x168             0x235     0x236
+          [  [ 10 | Sunny | Pune]        [ 21 | KC | Mumbai]         [ 33 | Kaveri | Delhi].... ]
+
+
+List: std::list<Employee>data ;
+
+
+            0x100                               0x167     0x168                         0x235     0x236
+          [  [ nullptr | 10 | Sunny | Pune| 0x168]        [ 0x167| 21 | KC | Mumbai| 0x236]       [0x235 | 33 | Kaveri | Delhi | nullptr].... ]
+
+*/

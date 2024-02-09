@@ -1,0 +1,18 @@
+Variant
+Optional
+Fold
+Visit
+guranteed copy ellision
+if-switch intializer
+structured binding
+...reference wrapper
+
+since c++11
+variadic templates
+thread
+async
+future and promise
+lock-gurad
+mutex
+unique_lock
+condition variable
