@@ -56,7 +56,9 @@ int main()
     // SUCH THAT parameter must be received by the function as Reference,
     // YOU MUST PASS SUCH PARAMETERS BY USING std::ref
     // IF NOT PASSED it might give segmentation error.
+
     std::future<float> result = std::async(std::launch::async, AverageofNValues, std::ref(ft));
+    
     // ft has to be passed by reference as it makes a duplication of ft object and pr cannot
     // communicate with ft as it is duplicated.
 
@@ -71,6 +73,8 @@ int main()
 // Fetching data(average) is taken care by "future".
 
 /*
+    Use case:
+
     Step 1: Enter the car. Start the Accessories of the car.(software setup)
     Step 2: 2 Activities
             a) Sync phone data with car.
@@ -82,14 +86,17 @@ int main()
 */
 
 /*
+
 std::launch::differ :- on same thread in different time.
 std::launch::async :- on same time parallely executes threads.
 std::launch :- if no parameter then os will select the best one.
+
 */
 /*
+
  reference of x or pointer to x
     &x  : if there is no data type to the left of x,it is pointer
 
     int& x: this is reference to int;
-    
+
 */

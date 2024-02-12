@@ -34,7 +34,7 @@ std::function<void(std::vector<int> &data)> MakeLambda()
         {
             total = total + val;
         }
-        std::lock_guard<std::mutex> lg(mt); // !!!  NEW CONCEPT - solved dead lock 
+        std::lock_guard<std::mutex> lg(mt); // !!!  NEW CONCEPT - solved dead lock
         std::cout << "Average is: " << total / data.size() << "\n";
     };
 

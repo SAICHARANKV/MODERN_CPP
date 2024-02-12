@@ -54,7 +54,7 @@ IF NO OPTIMIZATON
         Step 2: return an r value
         Step 3: r value assigned to e1.
         which means e1 should be attached to my data.
-        
+
 WITH OPTIMIZATON
         Step 1: We go to magic
         I know the address in main where data needs to be returned

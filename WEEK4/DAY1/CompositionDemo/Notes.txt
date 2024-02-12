@@ -1,0 +1,48 @@
+STL algorithms
+
+Category 1: std::any_of, std::all_of, std::none_of
+
+Input parmeters: iterators for input container and a predicate lambda
+
+return boolean
+a)any of the element satisfies condition(any_of)
+b)all of the element satisfies condition(all_of)
+c)none of the element satisfies condition(none_of)
+
+Category 2: min & max computation
+
+a)std::max : takes ierators to input and a comparator, returns first occurence of max value
+b)std::min : takes ierators to input and a comparator, returns first occurence of min value
+c)std::min_element: takes iterators to input and a comparator, returns iterator to first
+occurence of min value
+d)std::max_element: takes iterators to input and a comparator, returns iterator to first
+occurence of max value
+
+Category 3: sorting of elements
+
+std::sort:
+takes input iterators to input and a comparator, returns void
+
+Note:
+a)only applicable on random access iterators (containers that are accessed via positions )
+b)It performs in-place sorting (sorts original container, not a copy of elements
+
+Category 4 : Category Accumlate [Big Daddy Algorithm of all Algorithms]
+std::accumlate :
+takes input iterators to input and a binary operation function. returns the final answer
+Note:
+a) Binary operation has to be of type
+answer upto current point,one item from the container as inputs
+output should be binary operator applied between 2 arguments.
+
+Category 5 : Find Family
+a) find_if:iterator for input container and a predicate function
+return iterator to the first element found that matches the
+condition else returns input.end iterator.
+
+Category 6 : count Family
+a) count_if:iterator for input container and a predicate function
+return count of elements matching condition.
+
+Category 7 : for each adapter
+a) std::for_each: Takes input iterator and a function object.Applies function object on each input item.
