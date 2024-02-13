@@ -6,9 +6,11 @@
 
 class Employee
 {
-private:
+public:
     int _id;
     std::string _name;
+    std::mutex _mt;
+    bool flag = false;
     std::condition_variable cv;
 
 public:
@@ -21,28 +23,37 @@ public:
     std::string name() const { return _name; }
     void setName(const std::string &name) { _name = name; }
 
-    void display();
+    const std::condition_variable& getCV() { return cv;}
+    // void setCv(const std::condition_variable &cv_) { cv = cv_; }
+
+    bool getFlag() const { return flag; }
+    void setFlag(bool _flag) { flag = _flag; }
+
+    void SqCalc(int n);
 };
+
+void Employee ::SqCalc(int n)
+{
+    std::unique_lock<std::mutex> lk(_mt);
+    cv.wait(lk, [&]() { return flag; });
+    std::cout << "Sq: " << n * n << "\n";
+}
 
 int main()
 {
-    Employee e1(1, "Sai");
-    Employee e2(2, "Charan");
-    Employee e3(3, "Kushal");
+    int value;
+    std::cout << "Enter the value : " << "\n";
+    std::cin >> value;
+    Employee e1(1, "Name");
 
-    std::thread t1(&Employee::display, &e1); // Thread for e1
-    std::thread t2(&Employee::display, &e2); // Thread for e2
-    std::thread t3(&Employee::display, &e3); // Thread for e3
+    std::thread t1(&Employee::SqCalc, &e1, value); // No need for std::ref(value)
 
-    // Join threads
+    {
+        std::lock_guard<std::mutex> lk(e1._mt);
+        e1.setFlag(true);
+    }
+
+    e1.cv.notify_one();
+
     t1.join();
-    t2.join();
-    t3.join();
-    return 0;
-}
-
-void Employee::display()
-{
-    // std::this_thread::sleep_for(std::chrono::seconds(2));
-    std::cout << "ID: " << _id << " Name: " << _name << "\n";
 }

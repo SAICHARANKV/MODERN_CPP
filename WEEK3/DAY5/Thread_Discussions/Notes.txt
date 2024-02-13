@@ -1,0 +1,48 @@
+Scenario 1: I have a main program which includes a function that
+can be executed parallel to main or concurrent to main
+without any dependency on main
+
+main-------------/////////
+                \
+                \ launching std::thread with square function and 
+                \ vector as argument
+
+Scenario 2: I have 2 functions to be executed.Both of them are independent
+of each other.They can be executed simultaneously. They both write to a
+shared memory
+
+for e.g:Main and t1 calculating square and cube of numbers respectively
+and printing it on the console.
+
+since there is write to shared memory,use std::thread with a synchronization primitive
+
+Scenario 3: Creating and managing multiple threads
+    use a container like array or list to create a container of threads.
+
+Scenario 4: Function to be executed in thread returns a value
+    use std::future<T> as result value and launch thread with std::async
+
+Scenario 5: I want to start a thread for a function that require input,
+but can process some commands even before input becomes available 
+i.e. we can execute some part of the function without involving input parameter
+
+    5a) Function returns nothing(void)
+            - use future and promise model to send input to the function 
+                std::future<void as result return>
+    5b) Function returns some value
+            - use future and promise model to send input to the function 
+               Also use std::future<T> as return result value. where T is type
+               of return.
+
+Scenario 6: One Section of my program performs an action which generates data values.
+These values may be stored in some container/memory location.I want to execute some 
+function to consume/operate on generated values but I have certain expectations/limtations.
+
+    A) "Consumption should be triggered only when a value becomes available"
+    B) "Data to be consumed/Processed shall not be provided as input,since"
+            i) Values are generated periodically
+            ii) Value are generated but maintained outside of the consumer
+    C) It is used when need to create producer and consumer architecture.
+    Here use condition variable concept.and cannot use async and future.
+
+# we can't create a async threads array when returns are of different type.

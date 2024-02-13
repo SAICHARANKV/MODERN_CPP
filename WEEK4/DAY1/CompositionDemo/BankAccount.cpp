@@ -1,5 +1,5 @@
 #include "BankAccount.h"
-#include <limits>
+//#include <limits>
 #include <stdexcept>
 
 BankAccount::BankAccount(std::string accountHolderName, AccountType accounttype, float accountBalance)
@@ -34,3 +34,19 @@ long BankAccount::WithdrawAmount(long amount)
 
     return _accountBalance;
 }
+
+std::ostream &operator<<(std::ostream &os, const BankAccount &rhs) {
+    os << "_accountNumber: " << rhs._accountNumber
+       << " _accountHolderName: " << rhs._accountHolderName
+       << " _accounttype: " <<static_cast<int>( rhs._accounttype)
+       << " _accountBalance: " << rhs._accountBalance
+       << " _accountDebitCard: " << *(rhs._accountDebitCard);
+    return os;
+}
+
+// bool BankAccount::operator!=(const BankAccount &e)
+// {
+//     if (e.accountDebitCard()!=nullptr) 
+//                 return true; 
+//             return false; 
+// }

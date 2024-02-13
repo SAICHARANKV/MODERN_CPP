@@ -7,7 +7,7 @@
 #include "VIRTUAL_CAST_DESTRUCT_EXAMPLE/HR.cpp"
 
 // Partial functional
-//  Partial Function g(x) is based on keeping y as a constant
+// Partial Function g(x) is based on keeping y as a constant
 
 int formula(int x, int y, int z)
 {

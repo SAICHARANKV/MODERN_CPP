@@ -1,0 +1,54 @@
+1) Programming Expertise
+- AT LEAST 1 PROGRAMMING LANGUAGE
+- Ideally one OOP LANGUAGE ,One scripting language,and
+one general purpose structure oriented language.
+E.g:- C/C++/Python
+E.g:- Rust/Java/Python
+E.g:- Rust/Kotlin/Python
+
+2) Linear Data Structures:
+Array,list,vector,queue,stack,and other variations
+-Understand what to choose for scenario(theortical choice)not code.
+
+3) Essential Algorithms:
+Basic Operations and Algorithms like sum,accumulate,average..etc.
+All Basic Data processing things.
+
+4) Operating System Fundamentals:
+like semaphores,mutex,paging,segmentation...
+-Galvin (Book by this author)
+
+5) Computer Networks:
+IP Address and Ports,TCP and UDP , Firewalls
+
+6) Databases: one SQL and one NOSQL databases.
+
+7) Version Control : 
+    Git , Branching, Stashing, Cherry-picking,merging
+
+8) Command Line: 
+    A) Understand the path of system,basic features of 
+    command terminal
+
+    B) Essential utility commands of your OS.
+
+    C) Integration of command line with my editor
+
+9) Non-Linear Data Structures:
+    - Trees
+        - n-nary Trees
+        - Complete Trees
+        - Binary Search Trees
+        - AVL Trees
+        - Red-Black Trees
+    - Graphs
+        - Directed Graphs
+        - UnDirected Graphs
+        - BiDirected Graphs
+        - Cyclic and acyclic Graphs
+        - Weight/Cost Between a Src and Dest
+
+10) Ability to read documentation:
+    - skimming/searching/identifying relevant
+
+11) 

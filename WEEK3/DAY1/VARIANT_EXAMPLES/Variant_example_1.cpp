@@ -20,7 +20,7 @@ int main()
                { std::cout << val << "\n"; },
                v1);
 
-    std::array<std::variant<int, float>, 3> data;
+    std::array<std::variant<int, float>, 3> data{12,2.34f,33};
 
     for (std::variant<int, float> &v : data)
     {

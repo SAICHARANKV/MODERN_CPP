@@ -21,10 +21,10 @@ public:
     void setName(const std::string &name) { _name = name; }
 
     // Method to lock the mutex
-    void lockMutex() { _mt.lock(); }
+    // void lockMutex() { _mt.lock(); }
 
     // Method to unlock the mutex
-    void unlockMutex() { _mt.unlock(); }
+    // void unlockMutex() { _mt.unlock(); }
 
     void display();
 };
@@ -34,7 +34,7 @@ int main()
     Employee e1(1, "Sai");
     Employee e2(2, "Charan");
     Employee e3(3, "Kushal");
-
+          
     std::thread t1(&Employee::display, &e1); // Thread for e1
     std::thread t2(&Employee::display, &e2); // Thread for e2
     std::thread t3(&Employee::display, &e3); // Thread for e3
@@ -43,11 +43,15 @@ int main()
     t1.join();
     t2.join();
     t3.join();
+    
     return 0;
 }
 
 void Employee::display()
 {                   
     // std::this_thread::sleep_for(std::chrono::seconds(2));
-    std::cout << "ID: " << _id << " Name: " << _name << "\n";
+    _mt.lock();
+    // std::lock_guard<std::mutex> lk(_mt);
+    std::cout << "ID: " << _id << "\n" <<  "Name: " << _name << "\n";
+    _mt.unlock();
 }

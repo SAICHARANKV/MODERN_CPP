@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <ostream>
 #include "AccountType.h"
 #include "DebitCard.h"
 
@@ -41,12 +42,11 @@ public:
     */
     void DepositAmount(long amount);
     long WithdrawAmount(long amount);
-    
+
     /*
     getters and setters for member access
     */
     unsigned long accountNumber() const { return _accountNumber; }
-    float accountBalance() const { return _accountBalance; }
     std::string accountHolderName() const { return _accountHolderName; }
     AccountType accounttype() const { return _accounttype; }
     void setAccountHolderName(const std::string &accountHolderName) { _accountHolderName = accountHolderName; }
@@ -57,6 +57,10 @@ public:
     CardPointer accountDebitCard() const { return _accountDebitCard; }
 
     float accountBalance() const { return _accountBalance; }
+
+    friend std::ostream &operator<<(std::ostream &os, const BankAccount &rhs);
+
+    // bool operator!=(const BankAccount &e);
 };
 inline int BankAccount::_counter = 900000; // static
 
