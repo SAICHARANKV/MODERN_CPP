@@ -6,7 +6,7 @@
 
 class Employee
 {
-public:
+private:
     int _id;
     std::string _name;
     std::mutex _mt;
@@ -23,7 +23,7 @@ public:
     std::string name() const { return _name; }
     void setName(const std::string &name) { _name = name; }
 
-    const std::condition_variable& getCV() { return cv;}
+    std::condition_variable& getCV() { return cv;}
     // void setCv(const std::condition_variable &cv_) { cv = cv_; }
 
     bool getFlag() const { return flag; }
@@ -48,12 +48,12 @@ int main()
 
     std::thread t1(&Employee::SqCalc, &e1, value); // No need for std::ref(value)
 
-    {
-        std::lock_guard<std::mutex> lk(e1._mt);
+    // {
+        // std::lock_guard<std::mutex> lk(e1._mt);
         e1.setFlag(true);
-    }
+    // }
 
-    e1.cv.notify_one();
+    e1.getCV().notify_one();
 
     t1.join();
 }
