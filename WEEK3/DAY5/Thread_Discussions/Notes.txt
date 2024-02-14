@@ -15,6 +15,7 @@ for e.g:Main and t1 calculating square and cube of numbers respectively
 and printing it on the console.
 
 since there is write to shared memory,use std::thread with a synchronization primitive
+lock and unlock scenario.   
 
 Scenario 3: Creating and managing multiple threads
     use a container like array or list to create a container of threads.
