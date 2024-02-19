@@ -12,4 +12,8 @@ int main()
     // helper function==std::ref takes l value and converts to reference_wrapper
 }
 // std::reference_wrapper<int> ref = n1;
-// Reference wrapper cannot be nullptr 
+// Reference wrapper cannot be nullptr
+// std::ref cannot take l value only r values allowed and even if it taken convert
+// to r value with reference_wrapper
+// to use refernce wrapper or ref value must be defined some where in their scope
+// while passing.

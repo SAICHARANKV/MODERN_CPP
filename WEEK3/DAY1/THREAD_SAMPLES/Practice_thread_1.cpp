@@ -28,7 +28,7 @@ int main()
     };
     fns.emplace_back(square);
     fns.emplace_back(cube);
-
+    // fns={square,cube};
     for (auto val : fns)
     {
         val(data);

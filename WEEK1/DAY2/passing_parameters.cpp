@@ -1,3 +1,4 @@
+// Pass by Value
 #include <iostream>
 
 void Magic(int data)

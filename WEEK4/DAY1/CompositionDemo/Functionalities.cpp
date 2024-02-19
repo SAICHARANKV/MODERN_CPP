@@ -3,7 +3,8 @@
 #include <numeric>
 #include <string>
 
-void CreateObjects(Container &data) {
+void CreateObjects(Container &data)
+{
   std::string _expiry = "12/27";
 
   data.push_back(
@@ -41,50 +42,55 @@ void CreateObjects(Container &data) {
 */
 
 // Binary op : Any operation using 2 operands
-float FindTotalBankBalance(const Container &data) {
+float FindTotalBankBalance(const Container &data)
+{
   if (data.empty())
     throw std::runtime_error("Data is Empty!!!\n");
 
   float ans = std::accumulate(data.begin(), // start point
                               data.end(),   // End point
                               0.0f,         // Initalzing Value
-                              [](float total, const AccountPointer &ptr) {
+                              [](float total, const AccountPointer &ptr)
+                              {
                                 return (total + ptr->accountBalance());
                               }); // Operation need to be in lambda
 
   return ans;
 }
 
-unsigned int CountAbove50000BalanceAmount(const Container &data) {
+unsigned int CountAbove50000BalanceAmount(const Container &data)
+{
   if (data.empty())
     throw std::runtime_error("Data is Empty!!!\n");
 
   size_t ans =
-      std::count_if(data.begin(), data.end(), [](const AccountPointer &ptr) {
-        return ptr->accountBalance() > 50000;
-      });
+      std::count_if(data.begin(), data.end(), [](const AccountPointer &ptr)
+                    { return ptr->accountBalance() > 50000; });
   return ans;
 }
 
 // all_of , none_of ,any_of
-bool IsAnyAccountWithNoCard(const Container &data) {
-  if (data.empty()) {
+bool IsAnyAccountWithNoCard(const Container &data)
+{
+  if (data.empty())
+  {
     throw std::runtime_error("Data is Empty!!!\n");
   }
   bool ans =
-      std::any_of(data.begin(), data.end(), [](const AccountPointer &ptr) {
-        return ptr->accountDebitCard() == nullptr;
-      });
+      std::any_of(data.begin(), data.end(), [](const AccountPointer &ptr)
+                  { return ptr->accountDebitCard() == nullptr; });
   return ans;
 }
 
-std::optional<unsigned short> FindMaxBalanceCvvNumber(const Container &data) {
+std::optional<unsigned short> FindMaxBalanceCvvNumber(const Container &data)
+{
   if (data.empty())
     throw std::runtime_error("Data is Empty!!!\n");
 
   auto ans = std::max_element(
       data.begin(), data.end(),
-      [](const AccountPointer &ptr1, const AccountPointer &ptr2) {
+      [](const AccountPointer &ptr1, const AccountPointer &ptr2)
+      {
         return ptr1->accountBalance() > ptr2->accountBalance();
       });
   if ((*ans)->accountDebitCard() == nullptr)
@@ -92,13 +98,15 @@ std::optional<unsigned short> FindMaxBalanceCvvNumber(const Container &data) {
   return (*ans)->accountDebitCard()->cvv();
 }
 
-std::optional<std::string> FindMinBalanceExpiry(const Container &data) {
+std::optional<std::string> FindMinBalanceExpiry(const Container &data)
+{
   if (data.empty())
     throw std::runtime_error("Data is Empty!!!\n");
 
   auto ans = std::min_element(
       data.begin(), data.end(),
-      [](const AccountPointer &ptr1, const AccountPointer &ptr2) {
+      [](const AccountPointer &ptr1, const AccountPointer &ptr2)
+      {
         return (ptr1->accountBalance() < ptr2->accountBalance());
       });
   if ((*ans)->accountDebitCard() == nullptr)
@@ -106,7 +114,8 @@ std::optional<std::string> FindMinBalanceExpiry(const Container &data) {
   return ((*ans)->accountDebitCard()->expiryDate());
 }
 
-CardContainer ReturnDebitCardPointers(const Container &data) {
+CardContainer ReturnDebitCardPointers(const Container &data)
+{
   if (data.empty())
     throw std::runtime_error("Data is Empty!!!\n");
   Container temp(data.size());
@@ -114,9 +123,8 @@ CardContainer ReturnDebitCardPointers(const Container &data) {
 
   std::copy(data.begin(), data.end(), temp.begin());
 
-  std::for_each(temp.begin(), temp.end(), [&](const AccountPointer &ptr) {
-    result.push_back(ptr->accountDebitCard());
-  });
+  std::for_each(temp.begin(), temp.end(), [&](const AccountPointer &ptr)
+                { result.push_back(ptr->accountDebitCard()); });
 
   return result;
 }
@@ -128,26 +136,27 @@ CardContainer ReturnDebitCardPointers(const Container &data) {
     Step 2: From the temp container,extract the debitcard attribute and place
     in the result container.
 */
-std::optional<CardContainer>
-ReturnNonNullDebitCardPointers(const Container &data) {
-  if (data.empty()) {
+std::optional<CardContainer> ReturnNonNullDebitCardPointers(const Container &data)
+{
+  if (data.empty())
+  {
     throw std::runtime_error("Container is empty\n");
   }
-  Container temp(
-      data.size()); // To avoid segmentation fault you need to intialize
+  Container temp(data.size()); // To avoid segmentation fault you need to intialize
   CardContainer result;
   // Don't put random size
   std::copy_if(data.begin(), data.end(), temp.begin(),
-               [](const AccountPointer &ptr) {
+               [](const AccountPointer &ptr)
+               {
                  if (ptr->accountDebitCard() != nullptr)
                    return true;
                  return false;
                });
 
-  std::for_each(temp.begin(), temp.end(), [&](const AccountPointer &ptr) {
-    result.push_back(ptr->accountDebitCard());
-  });
-  if (result.empty()) {
+  std::for_each(temp.begin(), temp.end(), [&](const AccountPointer &ptr)
+                { result.push_back(ptr->accountDebitCard()); });
+  if (result.empty())
+  {
     return std::nullopt;
   }
   return result;
@@ -171,13 +180,15 @@ ReturnNonNullDebitCardPointers(const Container &data) {
   */
 }
 
-std::optional<Container> FindMatchingAccounts(const Container &data) {
+std::optional<Container> FindMatchingAccounts(const Container &data)
+{
   if (data.empty())
     std::runtime_error("Data is Empty!!!\n");
   Container result(data.size());
 
   auto itr = std::copy_if(data.begin(), data.end(), result.begin(),
-                          [](const AccountPointer &ptr) {
+                          [](const AccountPointer &ptr)
+                          {
                             return (ptr->accountBalance() > 30000 &&
                                     ptr->accountDebitCard() != nullptr);
                           });

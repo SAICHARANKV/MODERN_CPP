@@ -12,7 +12,7 @@ void Operation(const Container &data) {
     auto f1 = [](auto &&val) { std::cout << val << " -->\t"; };
     std::visit(f1, v);
     if (std::holds_alternative<int>(v)) {
-      int data = std::get<0>(v);
+      int data = std::get<0>(v);  
       total += std::get<0>(v);
       std::cout << data * data << "\n";
     } else {
@@ -37,3 +37,4 @@ int main() {
  If variables in variant follow or have different use cases.using
     holds_alternative and get.
 */
+

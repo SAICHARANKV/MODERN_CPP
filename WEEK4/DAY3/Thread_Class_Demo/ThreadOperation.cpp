@@ -5,13 +5,15 @@ std::ostream &operator<<(std::ostream &os, const ThreadOperation &rhs) {
   os << "_cube_val: " << rhs._cube_val << " _value: " << rhs._value;
   return os;
 }
-void ThreadOperation::Produce_value_for_cube() {
+// Producer function
+void ThreadOperation::Produce_value_for_cube() {  
   std::cout << "Enter Cube Value: " << "\n";
   std::cin >> _cube_val;
   _cube_val_available = true;
   cv.notify_one();
 }
 
+// Consumer function
 void ThreadOperation::Cube() {
   std::unique_lock<std::mutex> lk(mt);
   cv.wait(lk, [&]() { return _cube_val_available; });
