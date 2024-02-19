@@ -15,7 +15,10 @@
     concurrent - Running a program without waiting for other
     program to execute by using complete hardware capacity eg:async thread
 
-    atomic variable - a lockless program where mutex use is not there.
+    atomic variable - a lockless programgning the value.
+
+  std::cout << result.get() << std::endl;
+} where mutex use is not there.
 */
 
 float AverageofNValues(std::future<int> &ft) {
